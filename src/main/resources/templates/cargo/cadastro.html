@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html layout:decorate="~{layout}">
-<head> 
-	<meta charset="UTF-8" />
-</head>
+<head><meta charset="UTF-8"/></head>
 <body>
 	    <section class="layout-content" layout:fragment="corpo">
 	
@@ -22,11 +20,10 @@
 	        </nav>
 	
 	        <div class="container" id="cadastro">
-	        
+	        	
 	        	<div th:replace="fragments/alert"></div>
-	        
-	            <form th:action="${cargo.id == null} ? @{/cargos/salvar} : @{/cargos/editar} " 
-	            	th:object="${cargo}" method="POST">
+	           
+	            <form th:action="${cargo.id == null} ? @{/cargos/salvar} : @{/cargos/editar}" th:object="${cargo}" method="POST">
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="nome">Nome do Cargo</label>
@@ -36,8 +33,7 @@
 	                        <label for="departamento">Departamento</label>
 	                        <select id="departamento" class="form-control" th:field="*{departamento}">
 	                            <option value="">Selecione</option>
-	                            <option th:each="d: ${departamentos}" th:value"${d.id}" th:text="${d.nome}">Administração</option>
-
+	                            <option th:each="d: ${departamentos}" th:value="${d.id}" th:text="${d.nome}">Administração</option>
 	                        </select>
 	                    </div>
 	                </div>
@@ -46,6 +42,5 @@
 	            </form>
 	        </div>
 	    </section>
-
 </body>
 </html>		

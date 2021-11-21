@@ -69,7 +69,7 @@
 	                        <label for="cargo">Cargo</label>
 	                        <select id="cargo" class="form-control" th:field="*{cargo}">
 	                            <option value="">Selecione...</option>
-	                            <option th:each="c: ${cargos}" th:value"${c.id}" th:text="${c.nome}">Auxiliar Contábil</option>
+	                            <option th:each="c: ${cargos}" th:value="${c.id}" th:text="${c.nome}">Auxiliar Contábil</option>
 
 	                        </select>
 	                        <div class="invalid-feedback">
